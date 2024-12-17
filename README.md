@@ -1,3 +1,16 @@
+## This is a fork from [https://github.com/casesandberg/react-color](https://github.com/casesandberg/react-color) to make it compatible with React 19.
+Thanks to [@ofps](https://github.com/ofps).
+
+```sh
+npm install @ybochatay/react-color
+```
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
 # [React Color](http://casesandberg.github.io/react-color/)
 
 [![Npm Version][npm-version-image]][npm-version-url]
