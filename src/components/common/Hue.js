@@ -7,21 +7,40 @@ export class Hue extends (PureComponent || Component) {
     this.unbindEventListeners()
   }
 
+  /**
+   * Handles the change event by calculating and updating the hue value.
+   *
+   * @param {Event} e - The event triggered during interaction.
+   */
   handleChange = (e) => {
+    e.preventDefault()
     const change = hue.calculateChange(e, this.props.direction, this.props.hsl, this.container)
     change && typeof this.props.onChange === 'function' && this.props.onChange(change, e)
   }
 
+  /**
+   * Initiates the hue change process by handling the mouse down event,
+   * and sets up event listeners for subsequent mouse move and mouse up events.
+   *
+   * @param {MouseEvent} e - The mouse down event.
+   */
   handleMouseDown = (e) => {
+    e.preventDefault()
     this.handleChange(e)
     window.addEventListener('mousemove', this.handleChange)
     window.addEventListener('mouseup', this.handleMouseUp)
   }
 
+  /**
+   * Ends the hue change process by removing the associated event listeners.
+   */
   handleMouseUp = () => {
     this.unbindEventListeners()
   }
 
+  /**
+   * Removes event listeners related to the hue change process.
+   */
   unbindEventListeners() {
     window.removeEventListener('mousemove', this.handleChange)
     window.removeEventListener('mouseup', this.handleMouseUp)

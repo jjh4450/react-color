@@ -27,6 +27,7 @@ export class Saturation extends (PureComponent || Component) {
   }
 
   handleChange = (e) => {
+    e.preventDefault()
     typeof this.props.onChange === 'function' && this.throttle(
       this.props.onChange,
       saturation.calculateChange(e, this.props.hsl, this.container),
@@ -35,6 +36,7 @@ export class Saturation extends (PureComponent || Component) {
   }
 
   handleMouseDown = (e) => {
+    e.preventDefault()
     this.handleChange(e)
     const renderWindow = this.getContainerRenderWindow()
     renderWindow.addEventListener('mousemove', this.handleChange)
