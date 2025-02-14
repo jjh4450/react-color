@@ -1,6 +1,6 @@
 {
-  "name": "@ybochatay/react-color",
-  "version": "2.19.4",
+  "name": "@jjh4450/react-color",
+  "version": "2.19.5",
   "description": "A Collection of Color Pickers from Sketch, Photoshop, Chrome & more",
   "main": "lib/index.js",
   "module": "es/index.js",
