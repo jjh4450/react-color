@@ -3,9 +3,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.19.8",
+  "version": "2.20.0",
   "description": "A Collection of Color Pickers from Sketch, Photoshop, Chrome & more",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "module": "es/index.js",
   "repository": {
     "type": "git",
@@ -25,10 +26,11 @@
     "es": "npm run clean-es && node scripts/use-module-babelrc.js && babel src -d es && node scripts/restore-original-babelrc.js",
     "clean-lib": "rm -rf lib && mkdir lib",
     "clean-es": "rm -rf es && mkdir es",
-    "prepublish": "npm run lib && npm run es",
+    "prepublish": "npm run lib && npm run es && npm run copy-dts",
     "docs": "npm run docs-server",
     "docs-server": "node ./scripts/docs-server",
     "docs-dist": "node ./scripts/docs-dist",
+    "copy-dts": "node ./scripts/copy-dts.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "chromatic": "chromatic --project-token=9z2kaxsuz"
